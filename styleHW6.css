@@ -1,0 +1,369 @@
+body {
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1330px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+.header {
+    position: relative;
+    background: yellow;
+    padding: 20px 0;
+}
+
+.header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.burger {
+    opacity: 1;
+    position: absolute;
+    left: -99999999999px;
+}
+
+.opener {
+    position: relative;
+    width: 15px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* @media (min-width: 768px) {
+    .opener {
+    display: none;
+    }
+} */
+
+.opener::before,
+.opener::after,
+.opener span {
+    position: absolute;
+    height: 3px;
+    left: 0;
+    right: 0;
+    background: black;
+}
+
+.opener::before,
+.opener::after {
+    content: "";
+}
+
+.opener::before {
+    top: 0;
+}
+.opener::after {
+    bottom: 0;
+}
+.opener span {
+    top: 6px;
+}
+
+
+.nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+.nav-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: yellow;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden
+}
+
+.burger:checked ~ .nav-list {
+    transition: opacity .3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* @media (min-width: 768px) {
+    .nav-list {
+        position: static;
+        display: flex;
+        align-items: center;
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-item {
+        margin-bottom: 0;
+    }
+    .nav-item + .nav-item {
+        padding-left: 15px;
+    }
+}
+ */
+.nav-item {
+    margin-bottom: 15px;
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover {
+    opacity: .7;
+}
+
+.main {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sidebar {
+    text-align: center;
+    flex: 0 0 210px;
+    padding: 20px;
+}
+
+.sidebar-left {
+    order: -1;
+    background: violet;
+}
+
+.sidebar-right {
+    background: skyblue;
+}
+
+.content {
+    padding: 20px;
+    flex-grow: auto;
+    width: calc(100% - 420px);
+}
+
+p {
+    text-align: center;
+}
+
+.title {
+    position: relative;
+    display: flex;
+    margin: 0 auto 20px;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col {
+    display: flex;
+    align-content: stretch;
+    width: 33.333%;
+    padding: 0 15px 30px;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+}
+.card:hover {
+    transition: all .5s ease-in-out;
+    transform: rotateY(360deg);
+}
+.card-img {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: peru;
+    border: solid 5px blueviolet;
+    
+}
+.card-body {
+    
+    flex: 1;
+}
+.card-footer {
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    margin: 0 auto 15px;
+    
+    
+
+}
+.btn {
+    display: inline-block;
+    font-weight: bold;
+    color: white;
+    padding: 6px 12px;
+    background: purple;
+    border-radius: 8px;
+}
+.footer {
+    padding: 20px;
+    background: lightgreen;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.holder {
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-content: stretch;
+    margin: auto;
+    width: 300px;
+    height: 200px;
+    border: 3px solid black;
+    border-radius: 15px 15px 0 0;
+}
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 80px;
+    height: 50%;
+    
+}
+.holder div:first-child {
+    flex-grow: 1.5;
+    background: red;
+    order: -2;
+}
+
+/* .holder div:last-child {
+    
+    flex-grow: 50;
+} */
+.item + .item {
+    background: blue;
+    order: 1;
+}
+
+.item + .item + .item {
+    background: purple;
+    order: 0;
+}
+
+.item + .item + .item + .item {
+    background: green;
+    order: 2;
+}
+.item + .item + .item + .item + .item {
+    background: orange;
+    order: -1;
+    flex-grow: 1.5;
+        
+}
+/* Стили для маленьких экранов (телефоны в альбомной ориентации, дисплей 576 пикселей и более) */
+@media (min-width: 576px) {
+    .main {
+    display: flex;
+    flex-grow: 1;
+}
+
+.sidebar {
+    text-align: center;
+    flex: 0 0 210px;
+    padding: 20px;
+}
+
+.sidebar-left {
+    order: -1;
+    background: violet;
+}
+
+.sidebar-right {
+    background: skyblue;
+}
+
+.content {
+    padding: 20px;
+    flex-grow: auto;
+    width: calc(100% - 420px);
+}
+
+p {
+    text-align: center;
+}
+}
+
+/* Стили для средних экранов (планшеты, дисплей 768 пикселей и более) */
+    @media (min-width: 768px) { 
+        .opener {
+            display: none;
+        }
+        .nav-list {
+            position: static;
+            display: flex;
+            align-items: center;
+            opacity: 1;
+            visibility: visible;
+        }
+        .nav-item {
+            margin-bottom: 0;
+        }
+        .nav-item + .nav-item {
+            padding-left: 15px;
+        }
+     }
+
+/* Стили для больших экранов (ПК, дисплей 992 пикселей и более) */
+/*     @media (min-width: 992px) { ... } */
+
+/* Стили для очень больших экранов (ПК с большим монитором, дисплей 1200 пикселей и более) */
+   /*  @media (min-width: 1200px) { ... } */
