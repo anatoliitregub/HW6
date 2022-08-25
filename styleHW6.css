@@ -123,22 +123,6 @@ a {
     visibility: visible;
 }
 
-/* @media (min-width: 768px) {
-    .nav-list {
-        position: static;
-        display: flex;
-        align-items: center;
-        opacity: 1;
-        visibility: visible;
-    }
-    .nav-item {
-        margin-bottom: 0;
-    }
-    .nav-item + .nav-item {
-        padding-left: 15px;
-    }
-}
- */
 .nav-item {
     margin-bottom: 15px;
 }
@@ -159,8 +143,9 @@ a {
 }
 
 .sidebar {
+    display: none;
     text-align: center;
-    flex: 0 0 210px;
+    flex: 0 0 50px;
     padding: 20px;
 }
 
@@ -176,7 +161,7 @@ a {
 .content {
     padding: 20px;
     flex-grow: auto;
-    width: calc(100% - 420px);
+    width: 100%;
 }
 
 p {
@@ -199,7 +184,7 @@ p {
 .col {
     display: flex;
     align-content: stretch;
-    width: 33.333%;
+    width: 100vh;
     padding: 0 15px 30px;
 
 }
@@ -215,7 +200,7 @@ p {
     text-align: center;
 }
 .card:hover {
-    transition: all .5s ease-in-out;
+    transition: all 1s ease-in-out;
     transform: rotateY(360deg);
 }
 .card-img {
@@ -229,7 +214,6 @@ p {
     
 }
 .card-body {
-    
     flex: 1;
 }
 .card-footer {
@@ -238,10 +222,8 @@ p {
     width: 60px;
     height: 30px;
     margin: 0 auto 15px;
-    
-    
-
 }
+
 .btn {
     display: inline-block;
     font-weight: bold;
@@ -258,112 +240,67 @@ p {
 
 }
 
-.holder {
-    display: flex;
-    overflow: hidden;
-    flex-wrap: wrap;
-    align-content: stretch;
-    margin: auto;
-    width: 300px;
-    height: 200px;
-    border: 3px solid black;
-    border-radius: 15px 15px 0 0;
-}
-.item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    width: 80px;
-    height: 50%;
-    
-}
-.holder div:first-child {
-    flex-grow: 1.5;
-    background: red;
-    order: -2;
-}
-
-/* .holder div:last-child {
-    
-    flex-grow: 50;
-} */
-.item + .item {
-    background: blue;
-    order: 1;
-}
-
-.item + .item + .item {
-    background: purple;
-    order: 0;
-}
-
-.item + .item + .item + .item {
-    background: green;
-    order: 2;
-}
-.item + .item + .item + .item + .item {
-    background: orange;
-    order: -1;
-    flex-grow: 1.5;
-        
-}
 /* Стили для маленьких экранов (телефоны в альбомной ориентации, дисплей 576 пикселей и более) */
 @media (min-width: 576px) {
-    .main {
-    display: flex;
-    flex-grow: 1;
-}
-
-.sidebar {
-    text-align: center;
+    .sidebar {
     flex: 0 0 210px;
-    padding: 20px;
-}
-
-.sidebar-left {
-    order: -1;
-    background: violet;
-}
-
-.sidebar-right {
-    background: skyblue;
-}
-
-.content {
-    padding: 20px;
-    flex-grow: auto;
-    width: calc(100% - 420px);
-}
-
-p {
-    text-align: center;
-}
+    }
 }
 
 /* Стили для средних экранов (планшеты, дисплей 768 пикселей и более) */
-    @media (min-width: 768px) { 
-        .opener {
-            display: none;
-        }
-        .nav-list {
-            position: static;
-            display: flex;
-            align-items: center;
-            opacity: 1;
-            visibility: visible;
-        }
-        .nav-item {
-            margin-bottom: 0;
-        }
-        .nav-item + .nav-item {
-            padding-left: 15px;
-        }
-     }
+@media (min-width: 768px) { 
+    .opener {
+        display: none;
+    }
+    .nav-list {
+        position: static;
+        display: flex;
+        align-items: center;
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-item {
+        margin-bottom: 0;
+    }
+    .nav-item + .nav-item {
+        padding-left: 15px;
+    }
+    .sidebar {
+        flex: 0 0 210px;
+    }
+    .col {
+        width: 33.33%;
+    }
+}
+/* /* /* /* Стили для больших экранов (ПК, дисплей 992 пикселей и более) */
+@media (min-width: 992px) {
+    .sidebar {
+        display: flex;
+        flex: 0 0 210px;
+    }
+    .content {
+       width: calc(100% - 420px);
+    }
+   .col {
+        width: 33.333%;
+    }
+}
+ /* Стили для очень больших экранов (ПК с большим монитором, дисплей 1200 пикселей и более) */
+@media (min-width: 1200px) {  
+    .sidebar {
+        display: flex;
+        flex: 0 0 210px;
+    }
 
-/* Стили для больших экранов (ПК, дисплей 992 пикселей и более) */
-/*     @media (min-width: 992px) { ... } */
+    .sidebar-right {
+       order: 1;
+    }
 
-/* Стили для очень больших экранов (ПК с большим монитором, дисплей 1200 пикселей и более) */
-   /*  @media (min-width: 1200px) { ... } */
+    .content {
+       width: calc(100% - 420px);
+    }
+    .col {
+        width: 33.333%;
+    }
+    
+}
