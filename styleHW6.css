@@ -274,9 +274,14 @@ p {
 }
 /* /* /* /* Стили для больших экранов (ПК, дисплей 992 пикселей и более) */
 @media (min-width: 992px) {
+    .main {
+        flex-direction: row;
+        align-content: center;
+    }
     .sidebar {
         display: flex;
         flex: 0 0 210px;
+        justify-content: center;
     }
     .content {
        width: calc(100% - 420px);
@@ -287,9 +292,14 @@ p {
 }
  /* Стили для очень больших экранов (ПК с большим монитором, дисплей 1200 пикселей и более) */
 @media (min-width: 1200px) {  
+    .main {
+        flex-direction: row;
+        align-content: center;
+    }
     .sidebar {
         display: flex;
         flex: 0 0 210px;
+        justify-content: center;
     }
 
     .sidebar-right {
